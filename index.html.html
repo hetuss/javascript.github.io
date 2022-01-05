@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>javascript</title>
+	<script type="text/javascript">
+function validation ()
+{
+	var txt_name=document.register_form.txt_name.value;
+if(txt_name=="")
+{
+alert("Enter username");
+return false;
+}
+var pwd=document.register_form.pwd.value;
+if(pwd=="")
+{
+alert("Enter password");
+return false;
+}
+var address=document.register_form.address.value;
+if(address=="")
+{
+alert("Enter address");
+return false;
+}
+var g1=document.register_form.rbt1[0].checked;
+var g2=document.register_form.rbt1[1].checked;
+if(g1== false && g2== false)
+{
+alert("Enter Gender");
+return false;
+}
+var h1=document.register_form.chk_1.checked;
+var h2=document.register_form.chk_2.checked;
+// var h_3=document.register_form.h_3.checked;
+// var h_4=document.register_form.h_4.checked;
+if(h1== false && h2== false)
+{
+alert("Enter Hobby");
+return false;
+}
+var citynm=document.register_form.citynm.selectedIndex;
+if(citynm==0)
+{
+alert("Enter City");
+return false;
+}
+var file=document.register_form.file.value;
+if(file=="")
+{
+alert("Enter file");
+return false;
+}
+}		
+	</script>
+</head>
+
+<body bgcolor="black" text="white">
+       <table align="center" height="500" width="500" border="1" >
+       	<form method="post" name="register_form">
+       		<tr>
+       			<td height="20" width="20" colspan="2" align="center">regestration form</td>
+       		</tr>
+       		<tr>
+       			<td height="20" width="20">usrename</td>
+       			<td>
+       				<input type="text" name="txt_name"></td>
+       				<tr>
+       					<td height="20" width="20" >password</td>
+       				<td><input type="text" name="pwd"></td>
+       				</tr>
+       				<tr>
+       					<td height="20" width="20">address</td>
+       					<td><textarea name="address"></textarea></td>
+       				</tr>
+       				<tr>
+						<td height="20" width="20" >{{ __('Gender') }}</td>
+						<td><input type="radio" name="gender">male
+						<input type="radio" name="gender">female </td>
+					</tr>
+					<tr>
+						<td height="20" width="20">hobby</td>
+						<td>
+							<input type="checkbox" name="chk_1">ply
+							<input type="checkbox" name="chk_2">read
+							<!-- <input type="checkbox" name="h_3">music
+							<input type="checkbox" name="h_4">travel -->
+							<!-- <input type="checkbox" name="h_5">movie -->
+						</td>
+					</tr>
+					<tr>
+								<td height="20" width="20">city</td>
+								<td>
+								<select name="citynm">
+									<option disabled selected="">---select---</option>
+									<option>rajkot</option>
+									<option>amd</option>
+									<option>bhuj</option>
+									<option>diu</option>
+								</select>
+							</td>
+
+       		</tr>
+       		<tr>
+       			<td height="20" width="20">photo</td>
+       			<td><input type="file" name="file"></td>
+       		</tr>
+       		<tr>
+				<td height="30" width="0" colspan="2" align="center"><input type="button" name="submit" value="submit" onclick="return validation()"><input type="button" name="clear" value="clear"><input type="button" name="login" value="login"></td>
+								
+       	</form>
+       </table>
+</body>
+</html>
